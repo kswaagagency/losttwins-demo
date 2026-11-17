@@ -60,12 +60,12 @@ header{min-height:68px}
 .intro-screen{position:fixed;inset:0;z-index:1000;background:#080808;display:grid;place-items:center;overflow:hidden;transition:clip-path 1s cubic-bezier(.76,0,.24,1),visibility 1s}
 .intro-screen:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 52%,rgba(77,157,255,.13),transparent 42%)}
 .intro-inner{position:relative;z-index:1;text-align:center;width:min(88vw,560px);padding:30px}
-.intro-monogram{font:italic 900 clamp(66px,18vw,112px)/.9 "Archivo Black",sans-serif;letter-spacing:-.13em;transform:skew(-12deg);opacity:0;animation:introMark .65s .15s cubic-bezier(.2,.8,.2,1) forwards}
-.intro-rule{height:1px;width:0;margin:25px auto 18px;background:linear-gradient(90deg,transparent,#f1f0eb,transparent);animation:introRule .65s .55s ease forwards}
-.intro-wordmark{font:clamp(20px,5vw,34px)/1 "Archivo Black",sans-serif;letter-spacing:.08em;opacity:0;transform:translateY(12px);animation:introWord .65s .7s ease forwards}
-.intro-sub{font:9px "DM Mono",monospace;letter-spacing:.28em;color:#aaa;margin-top:13px;opacity:0;animation:introWord .5s 1s ease forwards}
+.intro-monogram{font:italic 900 clamp(66px,18vw,112px)/.9 "Archivo Black",sans-serif;letter-spacing:-.13em;transform:skew(-12deg);opacity:0;animation:introMark .9s .35s cubic-bezier(.2,.8,.2,1) forwards}
+.intro-rule{height:1px;width:0;margin:25px auto 18px;background:linear-gradient(90deg,transparent,#f1f0eb,transparent);animation:introRule .7s 1.25s ease forwards}
+.intro-wordmark{font:clamp(20px,5vw,34px)/1 "Archivo Black",sans-serif;letter-spacing:.08em;opacity:0;transform:translateY(12px);animation:introWord .8s 1.65s ease forwards}
+.intro-sub{font:9px "DM Mono",monospace;letter-spacing:.28em;color:#aaa;margin-top:13px;opacity:0;animation:introWord .6s 2.1s ease forwards}
 .intro-progress{height:2px;width:100px;background:rgba(255,255,255,.15);margin:30px auto 0;overflow:hidden}
-.intro-progress:after{content:"";display:block;height:100%;width:100%;background:#f1f0eb;transform:translateX(-100%);animation:introLoad 1.1s .45s cubic-bezier(.6,0,.4,1) forwards}
+.intro-progress:after{content:"";display:block;height:100%;width:100%;background:#f1f0eb;transform:translateX(-100%);animation:introLoad 1.8s 2.65s cubic-bezier(.6,0,.4,1) forwards}
 .intro-screen.is-leaving{clip-path:inset(0 0 100% 0);visibility:hidden;pointer-events:none}
 body.intro-active{overflow:hidden}
 @keyframes introMark{to{opacity:1;transform:skew(-12deg) scale(1)}}
@@ -146,7 +146,7 @@ const intro=document.getElementById('brandIntro');
 if(intro){
   document.body.classList.add('intro-active');
   const finishIntro=()=>{intro.classList.add('is-leaving');document.body.classList.remove('intro-active');setTimeout(()=>intro.remove(),1100)};
-  window.setTimeout(finishIntro,2300);
+  window.setTimeout(finishIntro,5000);
   intro.addEventListener('click',finishIntro,{once:true});
 }
 
